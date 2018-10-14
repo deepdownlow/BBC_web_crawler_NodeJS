@@ -4,27 +4,6 @@ const table = require("cli-table");
 const readline = require("readline-sync");
 const date = new Date();
 const datePrint = date.toString().slice(0, 10);
-const repeat = language => {
-  if(language === 'english') {
-    if (readline.keyInYN("\nWould like to continue?\n")) {
-      return start();
-    } else {
-      console.log("\nThank you for your time and have a nice day\n");
-    }
-  } else if (language === 'french') {
-    if (readline.keyInYN(`\nVoudrais continuer?\n`)) {
-      return start();
-    } else {
-      console.log("\nMerci pour votre temps et bonne journée\n");
-    }
-  } else if (language === 'persian') {
-    if (readline.keyInYN(`\nمیخواهم ادامه بدم?\n`)) {
-      return start();
-    } else {
-      console.log("\nشما را برای وقت خود و روز خوبی داشته باشید\n");
-    }
-  } 
-};
 const chooseMenu = language => {
   if (language === "english") {
     console.log(`\nPlease choose from the menu\n`);
@@ -63,6 +42,27 @@ const chooseMenu = language => {
     }
     return choice;
   }
+};
+const repeat = language => {
+  if(language === 'english') {
+    if (readline.keyInYN("\nWould like to continue?\n")) {
+      return start();
+    } else {
+      console.log("\nThank you for your time and have a nice day\n");
+    }
+  } else if (language === 'french') {
+    if (readline.keyInYN(`\nVoudrais continuer?\n`)) {
+      return start();
+    } else {
+      console.log("\nMerci pour votre temps et bonne journée\n");
+    }
+  } else if (language === 'persian') {
+    if (readline.keyInYN(`\nمیخواهم ادامه بدم?\n`)) {
+      return start();
+    } else {
+      console.log("\nشما را برای وقت خود و روز خوبی داشته باشید\n");
+    }
+  } 
 };
 const init = language => {
   const choice = chooseMenu(language);
